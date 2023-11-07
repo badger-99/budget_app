@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
+    @category = Category.find(params[:category_id])
     @payments = Payment.all
   end
 
