@@ -11,22 +11,63 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :user_id, value: current_user.id%>
+
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
+    <%= form.label :choose_an_icon, style: "display: block" %>
+    
+    <%= form.label :entertainment_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-masks-theater fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-masks-theater fa-xl"></i>
+    <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :health_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-heart-pulse fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-heart-pulse fa-xl"></i>
+    <% end %>
+
+    <%= form.label :fitness_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-dumbbell fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-dumbbell fa-xl"></i>
+    <% end %>
+
+    <%= form.label :travel_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-person-walking-luggage fa-2xl", class: "radio-input" %>
+      <i class="fa-solid fa-person-walking-luggage fa-2xl"></i>
+    <% end %>
+
+    <%= form.label :shopping_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-cart-shopping fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-cart-shopping fa-xl"></i>
+    <% end %>
+
+    <%= form.label :bills_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-file-invoice-dollar fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-file-invoice-dollar fa-xl"></i>
+    <% end %>
+
+    <%= form.label :dining_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-utensils fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-utensils fa-xl"></i>
+    <% end %>
+
+    <%= form.label :giving_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-hand-holding-heart fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-hand-holding-heart fa-xl"></i>
+    <% end %>
+
+
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+<%#= form.select :icon, Category::ICONS, { include_blank: 'Select an icon' }, class: 'fa-select' %>
+<%# <i class="fa-solid fa-masks-theater"></i> %>
