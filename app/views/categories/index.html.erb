@@ -5,10 +5,13 @@
 
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <div>
+      <i class="<%= category.icon %>"></i>
+      <div>
+        <h3><%=category.name%><h3>
+        <p>$ 000.00</p>
+      </div>
+    </div>
   <% end %>
 </div>
 
