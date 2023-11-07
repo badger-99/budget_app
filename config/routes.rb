@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/users/password' => 'devise/passwords#update'
+  end
   # resources :users
   resources :categories
   resources :payments
@@ -10,5 +14,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "categories#index"
+  # root "categories#index"
+  authenticated :user do
+  root "categories#index", as: :authenticated_root
+end
+
+unauthenticated do
+  root "welcome#index", as: :unauthenticated_root
+end
 end
