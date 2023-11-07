@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  include Devise::Controllers::Helpers
   # before_action :set_user, only: %i[show edit update destroy]
 
+  def welcome; end
   # # GET /users or /users.json
   # def index
   #   @users = User.all
