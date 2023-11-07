@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   get '/welcome' => 'users#welcome'
+  get '/home' => 'categories#index', as: :home
+  get '/categories/new' => 'categories#new', as: :new_category
+  get '/categories/:category_id/payment' => 'payments#index', as: :payments
+  get '/categories/:category_id/payment/new' => 'payments#new', as: :new_payments
+
+  post '/categories' => 'categories#create'
+  post '/payments' => 'payments#create'
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
