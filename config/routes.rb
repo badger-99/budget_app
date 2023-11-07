@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/home' => 'categories#index', as: :home
   get '/categories/new' => 'categories#new', as: :new_category
   get '/categories/:category_id/payment' => 'payments#index', as: :payments
-  get '/categories/:category_id/payment/new' => 'payments#new', as: :new_payments
+  get '/categories/:category_id/payment/new' => 'payments#new', as: :new_payment
 
   post '/categories' => 'categories#create'
   post '/payments' => 'payments#create'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   # resources :users
   resources :categories
-  resources :payments
+  # resources :payments
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
