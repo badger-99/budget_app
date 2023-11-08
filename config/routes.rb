@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get '/categories/:category_id/category_payment/:payment_id/new' => 'category_payments#new', as: :new_category_payment
 
   post '/categories' => 'categories#create'
-  post '/payments' => 'payments#create'
-  post '/category_payments' => 'category_payments#create'
-  
+  post '/categories/:category_id/payment' => 'payments#create'
+  post '/categories/:category_id/category_payments/:payment_id' => 'category_payments#create'
+
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
