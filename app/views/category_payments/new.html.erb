@@ -1,6 +1,7 @@
 <h1>Choose at least one category</h1>
 
-<%= form_with(model: @category_payment) do |form| %>
+  <% form.hidden_field :payment_id, value: @payment.id%>
+
   <%@categories.each do |category|%>
     <div>
       <input type="checkbox" name="category_ids[]" value="<%= category.id %>">
