@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+@import "font-awesome";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+}
+
+main {
+  padding: 0.5rem 0;
+  width: 438px;
+  height: 100vh;
+  background: white;
+  margin: 0 auto;
+}
+
+.fa-select option {
+  background-image: url('path-to-font-awesome-icons');
+  background-size: 20px; /* Adjust the size as needed */
+  background-repeat: no-repeat;
+  padding-left: 25px; /* Adjust the padding to align the text */
+}

@@ -6,12 +6,12 @@
 
   <p>
     <strong>Amount:</strong>
-    <%= payment.amount %>
+    $<%= format("%.2f", payment.amount) %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= payment.user_id %>
+    <strong>Date:</strong>
+    <%= payment.created_at.strftime('%d-%m-%Y') %>
   </p>
 
 </div>

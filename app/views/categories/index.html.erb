@@ -1,13 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1>Home</h1>
+<%= button_to "Sign Out", destroy_user_session_path, method: :get %>
 
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <% @expenditures = @payments.where(category_payments: { category_id: category.id }) %>
+    <div>
+      <i class="<%= category.icon %>"></i>
+      <div>
+        <h3><a href=<%=payments_path(category.id)%>><%=category.name%></a><h3>
+        <p>$<%= format("%.2f", @expenditures.sum(:amount))%></p>
+      </div>
+    </div>
   <% end %>
 </div>
 

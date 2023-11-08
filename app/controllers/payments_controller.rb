@@ -1,69 +1,45 @@
 class PaymentsController < ApplicationController
-  before_action :set_payment, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
-  # GET /payments or /payments.json
   def index
-    @payments = Payment.all
+    @category = Category.find(params[:category_id])
+    @payments = Payment.joins(:category_payments).where(category_payments: { category_id: @category.id })
+      .order(created_at: :desc)
   end
 
-  # GET /payments/1 or /payments/1.json
-  def show; end
-
-  # GET /payments/new
   def new
     @payment = Payment.new
+    @categories = Category.where(user_id: current_user.id)
   end
 
-  # GET /payments/1/edit
-  def edit; end
-
-  # POST /payments or /payments.json
   def create
     @payment = Payment.new(payment_params)
+    category_ids = params[:category_ids]
+    success = true
+    category = Category.find(params[:category_id])
 
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully created.' }
-        format.json { render :show, status: :created, location: @payment }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
+    if @payment.save
+      category_ids.each do |category_id|
+        @category_payment = CategoryPayment.new(category_id:, payment_id: @payment.id)
+        success = false unless @category_payment.save
       end
     end
-  end
 
-  # PATCH/PUT /payments/1 or /payments/1.json
-  def update
-    respond_to do |format|
-      if @payment.update(payment_params)
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @payment }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /payments/1 or /payments/1.json
-  def destroy
-    @payment.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
-      format.json { head :no_content }
+    if success
+      flash[:notice] = 'Category payment was successfully created.'
+      redirect_to "/categories/#{category.id}/payment"
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_payment
-    @payment = Payment.find(params[:id])
+  def payment_params
+    params.require(:payment).permit(:name, :amount, :author_id)
   end
 
-  # Only allow a list of trusted parameters through.
-  def payment_params
-    params.require(:payment).permit(:name, :amount, :user_id)
+  def category_payment_params
+    params.require(:category_payment).permit(:payment_id, category_ids: [])
   end
 end
