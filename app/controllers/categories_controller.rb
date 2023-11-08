@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   def index
     @categories = Category.where(user_id: current_user.id)
+    @payments = Payment.joins(:category_payments)
   end
 
   def new
