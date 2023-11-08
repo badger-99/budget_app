@@ -3,7 +3,7 @@
 <h1>Transactions</h1>
 <h2><%= @category.name%></h2>
 <p>Total transactions: $<%= format("%.2f", @payments.sum(:amount))%></p>
-<%= link_to 'back', home_path%>
+<a href= <%= home_path%>><i class="fas fa-chevron-left"></i></a>
 
 <div id="transactions">
   <% @payments.each do |payment| %>
