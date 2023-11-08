@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
     category = Category.find(params[:category_id])
 
     if @payment.save
-      redirect_to "/categories/#{category.id}/category_payment/#{@payment}/new"
+      redirect_to "/categories/#{category.id}/category_payment/#{@payment.id}/new"
     else
       render :new, status: :unprocessable_entity
     end
