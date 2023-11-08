@@ -2,14 +2,13 @@
 
 <%= form_with(model: @category_payment) do |form| %>
   <%@categories.each do |category|%>
-    <button type='submit', name='category', value=<%=category.id%>>
+    <div>
+      <input type="checkbox" name="category_ids[]" value="<%= category.id %>">
       <div>
-      <i class="<%= category.icon %>"></i>
-      <div>
-        <p><%=category.name%><p>
+        <i class="<%= category.icon %>"></i>
+        <p><%= category.name %></p>
       </div>
     </div>
-    </button>
   <%end%>
 
   <div>
