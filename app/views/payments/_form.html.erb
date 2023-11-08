@@ -23,6 +23,17 @@
     <%= form.number_field :amount, step: 0.01 %>
   </div>
 
+  <p>Choose at least one category</p>
+  <%@categories.each do |category|%>
+    <div>
+      <input type="checkbox" name="category_ids[]" value="<%= category.id %>">
+      <div>
+        <i class="<%= category.icon %>"></i>
+        <p><%= category.name %></p>
+      </div>
+    </div>
+  <%end%>
+
   <div>
     <%= form.submit %>
   </div>
