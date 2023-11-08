@@ -14,27 +14,27 @@
  *= require_self
  */
 
- @import "font-awesome";
+@import "font-awesome";
 
- *{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
- }
+}
 
- body{
+body {
   background: black;
 }
 
- main {
+main {
   padding: 0.5rem 0;
   width: 438px;
   height: 100vh;
   background: white;
   margin: 0 auto;
- }
+}
 
- .fa-select option {
+.fa-select option {
   background-image: url('path-to-font-awesome-icons');
   background-size: 20px; /* Adjust the size as needed */
   background-repeat: no-repeat;
