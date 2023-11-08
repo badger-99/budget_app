@@ -4,16 +4,19 @@ Rails.application.routes.draw do
   get '/categories/new' => 'categories#new', as: :new_category
   get '/categories/:category_id/payment' => 'payments#index', as: :payments
   get '/categories/:category_id/payment/new' => 'payments#new', as: :new_payment
+  get '/categories/:category_id/category_payment/:payment_id/new' => 'category_payments#new', as: :new_category_payment
 
   post '/categories' => 'categories#create'
   post '/payments' => 'payments#create'
+  post '/category_payments' => 'category_payments#create'
+  
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get '/users/password' => 'devise/passwords#update'
   end
   # resources :users
-  resources :categories
+  # resources :categories
   # resources :payments
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
