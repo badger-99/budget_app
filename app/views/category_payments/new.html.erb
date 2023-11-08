@@ -1,0 +1,18 @@
+<h1>Choose at least one category</h1>
+
+<%= form_with(model: @category_payment) do |form| %>
+  <%@categories.each do |category|%>
+    <button type='submit', name='category', value=<%=category.id%>>
+      <div>
+      <i class="<%= category.icon %>"></i>
+      <div>
+        <p><%=category.name%><p>
+      </div>
+    </div>
+    </button>
+  <%end%>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<%end%>
