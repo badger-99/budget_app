@@ -22,9 +22,10 @@ class PaymentsController < ApplicationController
   # POST /payments or /payments.json
   def create
     @payment = Payment.new(payment_params)
+    category = Category.find(params[:category_id])
 
     if @payment.save
-      redirect_to new_category_payment(@payment.id)
+      redirect_to "/categories/#{category.id}/category_payment/#{@payment.id}/new"
     else
       render :new, status: :unprocessable_entity
     end
