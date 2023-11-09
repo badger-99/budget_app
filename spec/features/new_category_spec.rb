@@ -5,10 +5,6 @@ RSpec.feature 'New Category form', type: :feature do
     before(:each) do
       @me = User.create(name: 'me', email: 'me@code.io', password: 'f4k3p455w0rd')
       @me.confirm
-      # <i class="fa-solid fa-gears"></i>
-      # @category = Category.create(name: 'Test', icon: 'fa-solid fa-gears', user_id: @me.id)
-      # @payment = Payment.create(name: 'Capybara', amount: 501.99, author_id: @me.id)
-      # @join = CategoryPayment.create(category_id: @category.id, payment_id: @payment.id)
       login_as(@me, scope: :user)
       visit '/categories/new'
     end
