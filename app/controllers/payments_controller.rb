@@ -13,15 +13,18 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @payment = Payment.new(payment_params)
-    category_ids = params[:category_ids]
-    success = true
-    category = Category.find(params[:category_id])
+    @categories = Category.where(user_id: current_user.id)
+    success = false
+    unless params[:category_ids].nil?
+      category = Category.find(params[:category_id])
+      @payment = Payment.new(payment_params)
+      category_ids = params[:category_ids]
 
-    if @payment.save
-      category_ids.each do |category_id|
-        @category_payment = CategoryPayment.new(category_id:, payment_id: @payment.id)
-        success = false unless @category_payment.save
+      if @payment.save
+        category_ids.each do |category_id|
+          @category_payment = CategoryPayment.new(category_id:, payment_id: @payment.id)
+          success = true if @category_payment.save
+        end
       end
     end
 
@@ -29,7 +32,8 @@ class PaymentsController < ApplicationController
       flash[:notice] = 'Category payment was successfully created.'
       redirect_to "/categories/#{category.id}/payment"
     else
-      render :new, status: :unprocessable_entity
+      @payment = Payment.new
+      render :new, status: :unprocessable_entity, locals: { payment: @payment }
     end
   end
 
