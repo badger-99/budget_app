@@ -22,7 +22,7 @@ class PaymentsController < ApplicationController
 
       if @payment.save
         category_ids.each do |category_id|
-          @category_payment = CategoryPayment.new(category_id: category_id, payment_id: @payment.id)
+          @category_payment = CategoryPayment.new(category_id:, payment_id: @payment.id)
           success = true if @category_payment.save
         end
       end
