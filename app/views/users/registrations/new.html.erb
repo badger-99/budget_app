@@ -1,4 +1,4 @@
-<section id='signup'>
+<section class='form-page'>
   <div class='top-section'>
     <a class='back-arrow' href= <%= welcome_path%>><i class="fas fa-arrow-left"></i></a>
     <h3>REGISTER</h3>
@@ -9,7 +9,7 @@
     <%= render "users/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.text_field :name, autofocus: true, placeholder: "Full Name" %>
+      <%= f.text_field :name, placeholder: "Full Name" %>
     </div>
 
     <div class="field">
