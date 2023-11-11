@@ -46,7 +46,6 @@ body {
 }
 
 main {
-  padding: 0.5rem 1rem;
   width: 375px;
   height: 624px;
   background: white;
@@ -55,11 +54,6 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: auto;
-  
-    h1, h2, h3{
-      font-family: 'Satisfy', 'cursive' ;
-      color: $text-dark;
-    }
 }
 
 .fa-select option {
@@ -77,4 +71,45 @@ main {
 .flex-col{
   display: flex;
   flex-direction: column;
+}
+
+.top-section{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background: $gradient;
+  color: white;
+  padding: 2.5rem 0.75rem 0.9rem;
+  margin-bottom: 1rem;
+  
+  .back-arrow{
+    margin-top: 0.1rem;
+    color: white;
+    font-size: 1.5rem;
+    justify-self: left;
+  }
+  
+  h3{
+    font-family: 'Proxima-Nova_Bold', sans-serif;
+    justify-self: center; 
+    }
+
+  .form-submit{
+    color: white;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    font-family:  'Proxima-Nova_Light', sans-serif;
+    font-size: 0.9rem;
+    justify-self: right;
+    align-self: last center;
+  }
+}
+
+.two-item-top-section{
+  gap: 25%;
+}
+
+.three-item-top-section{
+  justify-content: space-between;
 }
