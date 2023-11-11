@@ -1,0 +1,53 @@
+@import '_variables';
+
+#new-category-top-section{
+  display: grid;
+  grid-template-columns: (1fr 2fr);
+  align-items: center;
+  background: $gradient;
+  color: white;
+  padding: 2.5rem 0.75rem 0.9rem;
+ 
+  
+  .back-arrow{
+    margin-top: 0.1rem;
+    color: white;
+    font-size: 1.5rem;
+    justify-self: left;
+  }
+  
+  h3{
+    font-family: 'Proxima-Nova_Bold', sans-serif;
+    justify-self: left; 
+    }
+}
+
+#new_category{
+  height: 408px;
+  overflow-y: auto;
+}
+
+#category_name{
+  margin-bottom: 1rem;
+}
+
+#icon-instruction{
+  margin: 1rem 0 0;
+  font-family: 'Proxima-Nova_Light', sans-serif;
+  color: $text-lighter;
+  font-size: 1.2rem;
+}
+
+.grid-icons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 3rem;
+  column-gap: 2rem;
+  padding: 1rem 0;
+}
+
+.icon{
+  font-size: 2rem;
+  color: $text-dark;
+  width: 40px;
+}
