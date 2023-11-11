@@ -1,0 +1,38 @@
+@import '_variables';
+
+.form-page{
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  form{
+    background-color: white;
+    // border: 1px solid $text-lightest;
+    padding: 0 0.75rem;
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='float']{
+      width: 100%;
+      border: none;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid $text-lighter;
+    }
+
+    input::placeholder{
+      font-family:  'Proxima-Nova_Light', sans-serif;
+    }
+  }
+  
+  #forgot_pass{
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+
+    #forgot_pass_link{
+    text-decoration: none;
+    font-family:  'Proxima-Nova_Light', sans-serif;
+    color: $text-lighter;
+    font-size: 0.9rem;
+    margin: 0 auto;
+  }
+  }
+}
