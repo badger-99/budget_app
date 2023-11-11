@@ -1,0 +1,34 @@
+@import '_variables';
+
+#home{
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  #categories{
+    padding: 0.5rem;
+    overflow-y: auto;
+    height: 400px;
+    font-family: 'Proxima-Nova-Light', sans-serif;
+    color: $text-lighter;
+    gap: 1rem;
+
+    .category{
+      background: white;
+      padding: 0.8rem;
+      width: 100%;
+      gap: 1rem;
+      align-items: center;
+
+      .icon{
+        font-size: 2rem;
+        color: $text-dark;
+        width: 40px;
+      }
+
+      .category_details{
+        .category_name{
+          color: $text-light;
+        }
+      }
+    }
+  }
+}
