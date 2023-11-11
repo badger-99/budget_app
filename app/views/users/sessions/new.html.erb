@@ -1,21 +1,22 @@
-<h2>Login</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+<section class='form-page'>
+  <div class='top-section'>
+    <a class='back-arrow' href= <%= welcome_path%>><i class="fas fa-arrow-left"></i></a>
+    <h3>LOGIN</h3>
+    <input type='submit' form='new_user' name='commit' value='Log In' data-disable-with='Log In' class='form-submit'>
   </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.email_field :email, placeholder: "Email" %>
+    </div>
 
-  <div class="field">
-    <%= f.password_field :password, placeholder: "Password" %>
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+  <% end %>
+
+  <div id='forgot_pass' class='flex-row'>
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name), id: 'forgot_pass_link' %><br />
+  <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<div class="forgot_pass">
-  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-<% end %>
-</div>
+</section>
