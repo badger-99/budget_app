@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/welcome' => 'users#welcome'
+  get '/welcome' => 'users#welcome', as: :welcome
   get '/home' => 'categories#index', as: :home
   get '/categories/new' => 'categories#new', as: :new_category
   get '/categories/:category_id/payment' => 'payments#index', as: :payments

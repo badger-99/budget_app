@@ -11,8 +11,8 @@ RSpec.feature 'Home page  (authenticated root)', type: :feature do
 
     it 'Should render the authenticated root (Home) page' do
       expect(page).to have_content 'Home'
-      expect(page).to have_link('New category', href: '/categories/new')
-      expect(page).to have_button 'Sign Out'
+      expect(page).to have_link('New Category', href: '/categories/new')
+      expect(page).to have_link 'Sign Out'
     end
   end
 end

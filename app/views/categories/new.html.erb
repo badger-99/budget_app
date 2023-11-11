@@ -1,9 +1,15 @@
-<h1>New Category</h1>
+<section class='form-page'>
+    <div id='new-category-top-section'>
+    <a class='back-arrow' href= <%= home_path%>><i class="fas fa-arrow-left"></i></a>
+    <h3>New Category</h3>
+  </div>
 
-<%= render "form", category: @category %>
+  
 
-<br>
+  <%= render "form", category: @category %>
 
-<div>
-  <a href= <%= home_path%>><i class="fas fa-chevron-left"></i></a>
-</div>
+  <div class='green-button-container'>
+    <input type='submit' form='new_category' name='commit' value='Create Category' data-disable-with='Create Category' class='green-button'>
+  </div>
+
+</section>

@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<section id='transactions'>
+  <div class='top-section'>
+    <a class='back-arrow' href= <%= home_path%>><i class="fas fa-arrow-left"></i></a>
+    <h3>Transactions</h3>
+    <div>&nbsp;</div>
+  </div>
 
-<h1>Transactions</h1>
-<h2><%= @category.name%></h2>
-<p>Total transactions: $<%= format("%.2f", @payments.sum(:amount))%></p>
-<a href= <%= home_path%>><i class="fas fa-chevron-left"></i></a>
+  <div id='total-transactions' class='flex-row'>
+    <h4><%= @category.name%></h4>
+    <p>Total: $<%= format("%.2f", @payments.sum(:amount))%></p>
+  </div>
 
-<div id="transactions">
-  <% @payments.each do |payment| %>
-    <%= render payment %>
-  <% end %>
-</div>
+  <div id="payments">
+    <% @payments.each do |payment| %>
+    <div class='payment flex-col'>
+        <div class='details flex-row'>
+          <p><%= payment.name %></p>
+          <p>$<%= format("%.2f", payment.amount) %></p>
+        </div>
+        <p class='date'> <%= payment.created_at.strftime('%d-%b-%Y') %> </p>
+      </div>
+    <% end %>
+  </div>
 
-<%= link_to "New Transaction", new_payment_path(@category.id) %>
+  <div class='green-button-container'>
+    <%= link_to "New Transaction", new_payment_path(@category.id), class: 'green-button' %>
+  </div>
+</section>

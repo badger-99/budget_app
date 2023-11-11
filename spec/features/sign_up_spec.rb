@@ -8,7 +8,7 @@ RSpec.feature 'Sign Up page', type: :feature do
       fill_in 'user_email', with: 'me@code.io'
       fill_in 'user_password', with: 'f4k3p455w0rd'
       fill_in 'user_password_confirmation', with: 'f4k3p455w0rd'
-      click_button 'Sign up'
+      click_button 'Sign Up'
       expect(page).to have_content('A message with a confirmation link has been sent to your email address.')
     end
   end

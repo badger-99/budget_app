@@ -15,6 +15,25 @@
  */
 
 @import "font-awesome";
+@import '_variables';
+
+@font-face {
+  font-family: 'Proxima-Nova-Bold';
+  src:
+    url('app/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('app/assets/fonts/ProximaNova-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova-Light';
+  src:
+    url('app/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('app/assets/fonts/ProximaNova-Light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
 
 * {
   padding: 0;
@@ -24,14 +43,17 @@
 
 body {
   background: black;
+  position: relative;
 }
 
 main {
-  padding: 0.5rem 0;
-  width: 438px;
-  height: 100vh;
+  width: 375px;
+  height: 624px;
   background: white;
-  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .fa-select option {
@@ -39,4 +61,42 @@ main {
   background-size: 20px; /* Adjust the size as needed */
   background-repeat: no-repeat;
   padding-left: 25px; /* Adjust the padding to align the text */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.green-button-container {
+  background-color: $secondary-color;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.68rem 0;
+
+  .green-button {
+    margin: 1.5rem 0;
+    color: white;
+    border: 1px solid white;
+    padding: 1rem;
+    font-family: 'Proxima-Nova-Light', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background: transparent;
+  }
+}
+
+.two-item-top-section {
+  gap: 25%;
+}
+
+.three-item-top-section {
+  justify-content: space-between;
 }

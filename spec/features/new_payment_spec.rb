@@ -12,7 +12,7 @@ RSpec.feature 'New Category form', type: :feature do
     end
 
     it 'show new payment page elements' do
-      expect(page).to have_content('New Payment')
+      expect(page).to have_content('New Transaction')
       expect(page).to have_link(href: "/categories/#{@category.id}/payment")
     end
 
@@ -20,7 +20,7 @@ RSpec.feature 'New Category form', type: :feature do
       expect(page).to have_field('payment_name')
       expect(page).to have_field('payment_amount')
       expect(page).to have_field('category_ids[]', count: 2)
-      expect(page).to have_button('Create Payment')
+      expect(page).to have_button('Record Transaction')
     end
   end
 end

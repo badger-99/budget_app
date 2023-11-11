@@ -21,13 +21,13 @@ RSpec.feature 'Transactions page', type: :feature do
       visit "/categories/#{@category.id}/payment"
       expect(page).to have_content('Transactions')
       expect(page).to have_content(@category.name)
-      expect(page).to have_content("Total transactions: $#{total}")
-      expect(page).to have_content("Name: #{@payment.name}")
-      expect(page).to have_content("Amount: $#{@payment.amount}")
-      expect(page).to have_content("Name: #{@payment2.name}")
-      expect(page).to have_content("Amount: $#{@payment2.amount}")
-      expect(page).to_not have_content("Name: #{@payment3.name}")
-      expect(page).to_not have_content("Amount:$ #{@payment3.amount}")
+      expect(page).to have_content("Total: $#{total}")
+      expect(page).to have_content(@payment.name)
+      expect(page).to have_content(@payment.amount)
+      expect(page).to have_content(@payment2.name)
+      expect(page).to have_content(@payment2.amount)
+      expect(page).to_not have_content(@payment3.name)
+      expect(page).to_not have_content(@payment3.amount)
       expect(page).to have_link(href: '/home')
     end
   end
