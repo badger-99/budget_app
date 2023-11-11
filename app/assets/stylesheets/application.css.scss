@@ -15,6 +15,7 @@
  */
 
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 $primary-color: #3778c2;
 $gradient: linear-gradient(180deg, #3778c2 -1%, #316dae 50%, #2d619d 100%);
@@ -25,7 +26,7 @@ $text-lighter: #86888D;
 $text-lightest: #989CA2;
 
 @font-face {
-  font-family: 'Proxima Nova Bold';
+  font-family: 'Proxima-Nova-Bold';
   src: url('app/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
        url('app/assets/fonts/ProximaNova-Bold.woff') format('woff');
   font-weight: bold;
@@ -33,7 +34,7 @@ $text-lightest: #989CA2;
 }
 
 @font-face {
-  font-family: 'Proxima Nova Light';
+  font-family: 'Proxima-Nova-Light';
   src: url('app/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
        url('app/assets/fonts/ProximaNova-Light.woff') format('woff');
   font-weight: lighter;
@@ -61,7 +62,11 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: auto;
-  // margin: auto auto;
+  
+    h1, h2, h3{
+      font-family: 'Satisfy', 'cursive' ;
+      color: $text-dark;
+    }
 }
 
 .fa-select option {
