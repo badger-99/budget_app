@@ -8,13 +8,15 @@
   <div id="categories" class='flex-col'>
     <% @categories.each do |category| %>
       <% @expenditures = @payments.where(category_payments: { category_id: category.id }) %>
-      <div class='category flex-row'>
-        <i class="<%= category.icon %> icon"></i>
-        <div class='category_details'>
-          <a class='category_name' href=<%=payments_path(category.id)%>><%=category.name%></a>
-          <p class='category_amount'>$<%= format("%.2f", @expenditures.sum(:amount))%></p>
+      <a class="category-link" href=<%=payments_path(category.id)%>>
+        <div class='category flex-row'>
+          <i class="<%= category.icon %> icon"></i>
+          <div class='category_details'>
+            <p class='category_name' ><%=category.name%></p>
+            <p class='category_amount'>$<%= format("%.2f", @expenditures.sum(:amount))%></p>
+          </div>
         </div>
-      </div>
+      </a>
     <% end %>
   </div>
   <div class='green-button-container'>
