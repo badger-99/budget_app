@@ -1,47 +1,45 @@
 @import '_variables';
 
-#new-payment-top-section{
+#new-payment-top-section {
   display: grid;
-  grid-template-columns: (1fr 3fr);
+  grid-template-columns: 1fr 3fr;
   align-items: center;
   background: $gradient;
   color: white;
   padding: 2.5rem 0.75rem 0.9rem;
- 
-  
-  .back-arrow{
+
+  .back-arrow {
     margin-top: 0.1rem;
     color: white;
     font-size: 1.5rem;
     justify-self: left;
   }
-  
-  h3{
+
+  h3 {
     font-family: 'Proxima-Nova_Bold', sans-serif;
-    justify-self: left; 
-    }
+    justify-self: left;
+  }
 }
 
-#payment-form{
+#payment-form {
   padding-top: 1rem;
 }
 
-#icon-instruction{
+#icon-instruction {
   margin: 1rem 0 0;
   font-family: 'Proxima-Nova_Light', sans-serif;
   color: $text-lighter;
   font-size: 1.2rem;
 }
 
-.transaction-categories{
+.transaction-categories {
   padding-top: 1rem;
   gap: 1rem;
   height: 272px;
   overflow-y: auto;
-  
 }
 
-.transaction-category-details{
+.transaction-category-details {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -50,7 +48,7 @@
   padding: 0.875rem 0.25rem;
 }
 
-.icon{
+.icon {
   font-size: 2rem;
   color: $text-dark;
   width: 40px;

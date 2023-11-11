@@ -1,10 +1,10 @@
 @import '_variables';
 
-#home{
+#home {
   height: 100%;
   background-color: rgb(250, 250, 250);
 
-  #categories{
+  #categories {
     margin-top: 1rem;
     padding: 0.5rem;
     overflow-y: auto;
@@ -13,38 +13,37 @@
     color: $text-lighter;
     gap: 1rem;
 
-    .category-link{
+    .category-link {
       text-decoration: none;
 
-      .category{
+      .category {
         background: white;
         padding: 0.8rem;
         width: 100%;
         gap: 1rem;
         align-items: center;
-  
-        .icon{
+
+        .icon {
           font-size: 2rem;
           color: $text-dark;
           width: 40px;
         }
-  
-        .category_details{
-          .category_name{
+
+        .category_details {
+          .category_name {
             color: $text-light;
             text-decoration: underline;
           }
-  
-          .category_amount{
+
+          .category_amount {
             color: $text-lighter;
           }
         }
       }
     }
 
-    .category-link:hover{
+    .category-link:hover {
       border: 1px solid $text-lightest;
     }
-
   }
 }

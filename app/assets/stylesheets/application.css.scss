@@ -19,16 +19,18 @@
 
 @font-face {
   font-family: 'Proxima-Nova-Bold';
-  src: url('app/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
-       url('app/assets/fonts/ProximaNova-Bold.woff') format('woff');
+  src:
+    url('app/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('app/assets/fonts/ProximaNova-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Proxima-Nova-Light';
-  src: url('app/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
-       url('app/assets/fonts/ProximaNova-Light.woff') format('woff');
+  src:
+    url('app/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('app/assets/fonts/ProximaNova-Light.woff') format('woff');
   font-weight: lighter;
   font-style: normal;
 }
@@ -61,17 +63,17 @@ main {
   padding-left: 25px; /* Adjust the padding to align the text */
 }
 
-.flex-row{
-  display:flex;
+.flex-row {
+  display: flex;
   flex-direction: row;
 }
 
-.flex-col{
+.flex-col {
   display: flex;
   flex-direction: column;
 }
 
-.green-button-container{
+.green-button-container {
   background-color: $secondary-color;
   width: 100%;
   display: flex;
@@ -79,7 +81,7 @@ main {
   align-items: center;
   padding: 0.68rem 0;
 
-  .green-button{
+  .green-button {
     margin: 1.5rem 0;
     color: white;
     border: 1px solid white;
@@ -91,10 +93,10 @@ main {
   }
 }
 
-.two-item-top-section{
+.two-item-top-section {
   gap: 25%;
 }
 
-.three-item-top-section{
+.three-item-top-section {
   justify-content: space-between;
 }
