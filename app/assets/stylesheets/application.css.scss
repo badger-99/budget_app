@@ -20,6 +20,22 @@ $primary-color: #3778c2;
 $secondary-color: #54b523;
 $text: #434b54;
 
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('app/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
+       url('app/assets/fonts/ProximaNova-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('app/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
+       url('app/assets/fonts/ProximaNova-Light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
