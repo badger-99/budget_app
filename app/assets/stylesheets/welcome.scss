@@ -1,0 +1,50 @@
+@import '_variables';
+
+#welcome{
+  align-items: center;
+
+  h1{
+    color: black;
+    font-family: 'Satisfy', 'cursive' ;
+    font-size: 2.5rem;
+    margin-top: 70%;
+  }
+
+  #welcome-buttons{
+    margin-top: 50%;
+    width: 100%;
+    
+    button{
+      width: 100%;
+      border: none;
+      padding: 1rem 0;
+      font-family: 'Proxima-Nova_light', sans-serif;
+      font-size: 1rem;
+    }
+    
+    #login-button{
+      background: $primary-color;
+      color: white;
+      margin-bottom: 0.2rem;
+    }
+    
+        #login-button:hover{
+          border: 1px solid #3778c2;
+          background: white;
+          color: $primary-color;
+          margin-bottom: 0.05rem;
+          cursor: pointer;
+        }
+    
+    #signup-button{
+      background: white;
+      color: $text-light;
+    }
+    
+    #signup-button:hover{
+      color: $primary-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
