@@ -14,27 +14,22 @@
   <%= form.hidden_field :author_id, value: current_user.id%>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: 'Transaction Name' %>
   </div>
 
   <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount, step: 0.01 %>
+    <%= form.number_field :amount, step: 0.01, placeholder: 'Amount' %>
   </div>
 
-  <p>Choose at least one category</p>
-  <%@categories.each do |category|%>
-    <div>
-      <input type="checkbox" name="category_ids[]" value="<%= category.id %>">
-      <div>
-        <i class="<%= category.icon %>"></i>
-        <p><%= category.name %></p>
+  <p id='icon-instruction'>Choose at least one category</p>
+
+  <div class = 'transaction-categories flex-col'>
+    <%@categories.each do |category|%>
+      <div class='transaction-category-details'>
+        <input type="checkbox" name="category_ids[]" value="<%= category.id %>">
+          <i class="<%= category.icon %> icon"></i>
+          <p><%= category.name %></p>
       </div>
-    </div>
-  <%end%>
-
-  <div>
-    <%= form.submit %>
+    <%end%>
   </div>
 <% end %>
