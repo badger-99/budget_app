@@ -47,14 +47,20 @@ $text-lightest: #989CA2;
 
 body {
   background: black;
+  position: relative;
 }
 
 main {
-  padding: 0.5rem 0;
-  width: 438px;
-  height: 100vh;
+  padding: 0.5rem;
+  width: 375px;
+  height: 624px;
   background: white;
-  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  // margin: auto auto;
 }
 
 .fa-select option {
