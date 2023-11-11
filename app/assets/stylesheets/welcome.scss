@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import '_variables';
 
 #welcome{
   padding: 0.5rem 1rem;
   align-items: center;
 
-  h1{
+  #app-name{
     color: black;
     font-family: 'Satisfy', 'cursive' ;
     font-size: 2.5rem;
