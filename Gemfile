@@ -77,3 +77,5 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 6.4.2'
 
 gem 'sassc-rails'
+
+gem "bullet", "~> 7.1"
