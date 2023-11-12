@@ -62,8 +62,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]() - Coming soon
-- [Video Presentation](https://youtu.be/PUSXnR9rJ5A) - Coming soon
+- [Live Demo Link](https://money-mate-18oh.onrender.com/welcome)
+- [Video Presentation](https://youtu.be/PUSXnR9rJ5A)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
