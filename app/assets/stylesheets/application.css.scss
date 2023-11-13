@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+@import '_variables';
+
+@font-face {
+  font-family: 'Proxima-Nova-Bold';
+  src:
+    url('app/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('app/assets/fonts/ProximaNova-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova-Light';
+  src:
+    url('app/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('app/assets/fonts/ProximaNova-Light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  position: relative;
+}
+
+main {
+  width: 375px;
+  height: 624px;
+  background: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fa-select option {
+  background-image: url('path-to-font-awesome-icons');
+  background-size: 20px; /* Adjust the size as needed */
+  background-repeat: no-repeat;
+  padding-left: 25px; /* Adjust the padding to align the text */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.green-button-container {
+  background-color: $secondary-color;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.68rem 0;
+
+  .green-button {
+    margin: 1.5rem 0;
+    color: white;
+    border: 1px solid white;
+    padding: 1rem;
+    font-family: 'Proxima-Nova-Light', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background: transparent;
+  }
+}

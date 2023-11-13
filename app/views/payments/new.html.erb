@@ -1,0 +1,15 @@
+<section class='form-page'>
+    <div id='new-payment-top-section'>
+    <a class='back-arrow' href= <%= payments_path%>><i class="fas fa-arrow-left"></i></a>
+    <h3>New Transaction</h3>
+  </div>
+
+  
+
+  <%= render "form", payment: @payment %>
+
+  <div class='green-button-container'>
+    <input type='submit' form='payment-form' name='commit' value='Record Transaction' data-disable-with='Record Transaction' class='green-button'>
+  </div>
+
+</section>

@@ -1,0 +1,27 @@
+<section id='home'>
+  <div class='top-section'>
+    <div>&nbsp;</div>
+    <h3>Home</h3>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :get, class: 'form-submit' %>
+  </div>
+
+  <div id="categories" class='flex-col'>
+    <% @categories.each do |category| %>
+      <% @expenditures = @payments.where(category_payments: { category_id: category.id }) %>
+      <a class="category-link" href=<%=payments_path(category.id)%>>
+        <div class='category flex-row'>
+          <i class="<%= category.icon %> icon"></i>
+          <div class='category_details'>
+            <p class='category_name' ><%=category.name%></p>
+            <p class='category_amount'>$<%= format("%.2f", @expenditures.sum(:amount))%></p>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+  <div class='green-button-container'>
+    <%= link_to "New Category", new_category_path, class: 'green-button' %>
+  </div>
+
+</section>
+

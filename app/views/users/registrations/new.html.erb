@@ -1,0 +1,27 @@
+<section class='form-page'>
+  <div class='top-section'>
+    <a class='back-arrow' href= <%= welcome_path%>><i class="fas fa-arrow-left"></i></a>
+    <h3>REGISTER</h3>
+    <input type='submit' form='new_user' name='commit' value='Sign Up' data-disable-with='Sign Up' class='form-submit'>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Full Name" %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
+  <% end %>
+</section>

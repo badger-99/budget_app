@@ -1,0 +1,65 @@
+<%= form_with(model: category, id: 'new_category') do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :user_id, value: current_user.id%>
+
+  <div>
+    <%= form.text_field :name, placeholder: 'Category Name' %>
+  </div>
+
+  <p id='icon-instruction'>Choose an icon</p>
+
+  <div class = 'grid-icons'>
+    
+    <%= form.label :entertainment_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-masks-theater fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-masks-theater fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :health_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-heart-pulse fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-heart-pulse fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :fitness_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-dumbbell fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-dumbbell fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :travel_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-person-walking-luggage fa-2xl", class: "radio-input" %>
+      <i class="fa-solid fa-person-walking-luggage fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :shopping_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-cart-shopping fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-cart-shopping fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :bills_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-file-invoice-dollar fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-file-invoice-dollar fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :dining_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-utensils fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-utensils fa-xl icon"></i>
+    <% end %>
+
+    <%= form.label :giving_icon do %>
+      <%= form.radio_button :icon, "fa-solid fa-hand-holding-heart fa-xl", class: "radio-input" %>
+      <i class="fa-solid fa-hand-holding-heart fa-xl icon"></i>
+    <% end %>
+  </div>
+<% end %>
+

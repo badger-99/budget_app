@@ -1,0 +1,35 @@
+<%= form_with(model: payment, html: {id: 'payment-form'})  do |form| %>
+  <% if payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+        <% payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :author_id, value: current_user.id%>
+
+  <div>
+    <%= form.text_field :name, placeholder: 'Transaction Name' %>
+  </div>
+
+  <div>
+    <%= form.number_field :amount, step: 0.01, placeholder: 'Amount' %>
+  </div>
+
+  <p id='icon-instruction'>Choose at least one category</p>
+
+  <div class = 'transaction-categories flex-col'>
+    <%@categories.each do |category|%>
+      <div class='transaction-category-details'>
+        <input type="checkbox" name="category_ids[]" value="<%= category.id %>">
+          <i class="<%= category.icon %> icon"></i>
+          <p><%= category.name %></p>
+      </div>
+    <%end%>
+  </div>
+<% end %>
